@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sell your used university textbooks, calculators, and electronics on CampusMart." />
+  <title>CampusMart | Sell an Item</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html"><strong>CampusMart</strong></a>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="sell.html">Sell an Item</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr />
+
+  <!-- Form Area -->
+  <main>
+    <h1>Sell an Item</h1>
+    <p>Fill out the form below to list your item for sale on campus.</p>
+
+    <form action="/api/listings" method="post">
+      
+      <!-- Category Selection -->
+      <p>
+        <label for="category">Category:</label><br />
+        <select id="category" name="category" required>
+          <option value="">-- Please Select --</option>
+          <option value="books">Books</option>
+          <option value="electronics">Electronics</option>
+          <option value="furniture">Furniture</option>
+          <option value="clothing">Clothing</option>
+          <option value="stationery">Stationery</option>
+        </select>
+      </p>
+
+      <!-- Listing Title -->
+      <p>
+        <label for="title">Title:</label><br />
+        <input id="title" name="title" type="text" required minlength="5" maxlength="100" placeholder="e.g. Casio Calculator" />
+      </p>
+
+      <!-- Radio Group in Fieldset -->
+      <fieldset>
+        <legend>Item Condition</legend>
+        <label><input type="radio" name="condition" value="NEW" required /> New</label><br />
+        <label><input type="radio" name="condition" value="LIKE_NEW" /> Like New</label><br />
+        <label><input type="radio" name="condition" value="GOOD" /> Good</label><br />
+        <label><input type="radio" name="condition" value="FAIR" /> Fair</label>
+      </fieldset>
+
+      <!-- Price -->
+      <p>
+        <label for="price">Price (Rs):</label><br />
+        <input id="price" name="price" type="number" min="50" step="10" required placeholder="500" />
+      </p>
+
+      <!-- Description -->
+      <p>
+        <label for="description">Description:</label><br />
+        <textarea id="description" name="description" rows="4" cols="40" required minlength="20" placeholder="Describe the item's condition, edition, etc."></textarea>
+      </p>
+
+      <!-- File Upload -->
+      <p>
+        <label for="photo">Item Photo:</label><br />
+        <input id="photo" name="photo" type="file" accept="image/*" />
+      </p>
+
+      <!-- Confirmation Checkbox -->
+      <p>
+        <label>
+          <input type="checkbox" name="ownership_confirm" required />
+          I confirm this item belongs to me and is mine to sell.
+        </label>
+      </p>
+
+      <!-- Submit Button -->
+      <p>
+        <button type="submit">Publish Listing</button>
+      </p>
+
+    </form>
+
+    <!-- Table showing listing fee tiers -->
+    <section>
+      <h2>Listing Fees</h2>
+      <table border="1">
+        <caption>Listing Options</caption>
+        <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Standard Listing</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Featured Listing</td>
+            <td>Rs 500</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Accordion Details for Safety -->
+    <section>
+      <details>
+        <summary><strong>Safety Tips for Meeting Buyers</strong></summary>
+        <p>Always meet during daylight hours in a public area on campus (such as near the cafeteria or library lobby).</p>
+      </details>
+    </section>
+  </main>
+
+  <hr />
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 CampusMart &bull; Return to <a href="index.html">Homepage</a></p>
+  </footer>
+
+</body>
+</html>
