@@ -5,13 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Buy and sell second-hand textbooks, calculators, and electronics on campus." />
   <title>CampusMart | Buy &amp; Sell on Campus</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    
+    h2{
+      color: aqua;
+      background-color: rgb(196, 16, 16);
+      padding: 2%;
+    }
+    h1{
+      color: rgb(255, 0, 106);
+      background-color: white;
+      font-size: clamp(2rem, 5vw, 3.5rem); /* min, preferred, max → fluid heading */
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      padding: 5%;
+
+    }
+    p{
+      color: rgba(228, 228, 228, 0.5);
+    }
+    body{
+      background-color: rgb(2, 0, 0);
+    }
+    header{
+      color: rgb(221, 212, 216);
+    }
+    a{
+      color: rgb(82, 193, 233);
+      font-size: larger
+    }
+    table{
+      color: white;
+      background-color: rgb(25, 135, 224);
+    }
+    h3{
+      color: rgb(224, 125, 11);
+      font-size: xx-large;
+    }
+    
+  </style>
+  
 </head>
 <body>
+
 
   <!-- Semantic Header -->
   <header>
     <a href="index.html"><strong>CampusMart</strong></a>
-    <nav aria-label="Main Navigation">
+    <nav class="container">
       <ul>
         <li><a href="index.html">Browse</a></li>
         <li><a href="sell.html">Sell an Item</a></li>
@@ -34,30 +77,31 @@
       <a href="sell.html">Start Selling Now</a>
     </section>
 
-    <!-- Latest Listings Section -->
+    
     <section aria-labelledby="latest-heading">
       <h2 id="latest-heading">Latest Listings</h2>
       
-      <!-- Article 1 -->
+      
       <article>
-        <img src="https://placehold.co/400x300?text=Calculator" alt="Casio fx-991EX scientific calculator" width="400" height="300" />
-        <h3>Casio fx-991EX Calculator</h3>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEleqMfIgrNKA/profile-displayphoto-scale_200_200/B4DZ.QWPQFI4Ac-/0/1784833179780?e=2147483647&v=beta&t=VoMfYhunr7MC4ejvQS4svUybnVU8TElzVDELqJdHHF0" alt="Casio fx-991EX scientific calculator" width="400" height="300" />
+        <h3>This bacha for sale</h3>
         <p><strong>Rs 4,500</strong> | Electronics &bull; Good Condition</p>
         <p>Works perfectly, comes with original hard cover.<br />No scratches on screen.</p>
         <a href="mailto:seller1@campusmart.pk">Contact Seller</a>
       </article>
 
-      <!-- Article 2 -->
+      
       <article>
-        <img src="https://placehold.co/400x300?text=CLRS" alt="Introduction to Algorithms textbook" width="400" height="300" />
-        <h3>Introduction to Algorithms (CLRS)</h3>
+        <img src="https://i.pinimg.com/236x/74/12/87/7412878ce93a94d0954a33e04cac0268.jpg?nii=t" alt="Introduction to Algorithms textbook" width="400" height="300" />
+        <h3>Moeez right now</h3>
         <p><strong>Rs 3,500</strong> | Books &bull; Like New</p>
         <p>3rd edition with minimal highlighting inside.</p>
         <a href="mailto:seller2@campusmart.pk">Contact Seller</a>
       </article>
     </section>
+    <p>please push website accessibility to 100</p>
 
-    <!-- Average Prices Table -->
+    
     <section id="prices">
       <h2>Average Textbook Prices</h2>
       <table border="1">
