@@ -1,0 +1,202 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse; /* or column */
+    justify-content: space-between; /* main axis: start | center | end | space-between |
+   space-around */
+    align-items: center; /* cross axis: stretch | start | center | end */
+    gap: 1rem; /* space between items */
+    flex-wrap: wrap; /* allow items to move to the next line */
+   }
+   .item { flex: 1; } 
+
+   .site-header {
+    display: flex;
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky; /* stays at the top while scrolling */
+    top: 0;
+    background: rgb(255, 255, 255);
+   }
+   .logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #4f46e5;
+    text-decoration: none;
+   }
+   .nav-links {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+   }
+   .nav-links a {
+    color: #334155;
+    text-decoration: none;
+   }
+   .nav-links a:hover {
+    color: #4f46e5;
+   }
+   .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: #4f46e5;
+    color: white !important; /* (temporary — we'll fix specificity properly in the activity)
+   */
+    font-weight: 600;
+   }
+   .container {
+    max-width: 72rem; /* 1152px */
+    margin-inline: auto; /* centre horizontally */
+    padding: 2rem 1.5rem;
+   }
+   .listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+   }
+   .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    overflow: hidden; /* clip the image corners */
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    backdrop-filter: blur()
+
+}
+.card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 10px 25px rgb(0 0 0 / 0.08);
+ backdrop-filter: blur()
+}
+.card img {
+ aspect-ratio: 4 / 3;
+ object-fit: cover; /* fill the box without stretching */
+ width: 100%;
+ backdrop-filter: blur()
+}
+.card-body {
+ padding: 1rem;
+ backdrop-filter: blur()
+}
+.price {
+ font-size: 1.25rem;
+ font-weight: 800;
+ color: #4f46e5;
+}
+.meta {
+ font-size: 0.875rem;
+ color: #64748b;
+}
+
+/* Container/Grid context setup (ensures cards lay out nicely) */
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 20px;
+  }
+  
+  /* 1. The Glass Article Card */
+  .card {
+    /* Semi-transparent base layer */
+    background: rgba(255, 255, 255, 0.12);
+    
+    /* Blurs elements right behind the card layer */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    
+    /* The glossy white highlight rim */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    
+    /* Soft corners and subtle shadow for depth */
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    
+    /* Crucial: Keeps the image from breaking past the rounded glass corners */
+    overflow: hidden; 
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Optional hover feedback for an interactive UI feel */
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.18);
+  }
+  
+  /* 2. Card Image Adjustments */
+  .card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Adds a subtle separation between the image and the text area */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  /* 3. Card Typography Context */
+  .card-body {
+    padding: 20px;
+    /* Light text colors stand out best against frosted glass styles */
+    color: #ffffff; 
+  }
+  
+  .card-body h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-body .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22c55e; /* Highlight accent color for price tags */
+    margin: 0 0 4px 0;
+  }
+  
+  .card-body .meta {
+    font-size: 0.875rem;
+    opacity: 0.75; /* Subdued secondary text color */
+    margin: 0;
+  }
+  
+  .hero h1 { font-size: 2rem; }
+  .nav-links { gap: 0.75rem; }
+  @media (min-width: 768px) {
+   .hero h1 { font-size: 3rem; }
+  }
+  @media (min-width: 1024px) {
+   .hero { padding-block: 6rem; }
+  }
+  
+  
+:root{
+    --color-big: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-primary: #4f46e5;
+    --radius: 0.75rem;
+}  
+@media (prefers-color-scheme: dark) {
+    :root {
+    --color-bg: #0b1120;
+    --color-text: #e2e8f0;
+    --color-muted: #94a3b8;
+    --color-border: #1f2937;
+    }
+   }
+   body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    
+   }
+   h3{
+    color: var(--color-text);
+   }
+   
